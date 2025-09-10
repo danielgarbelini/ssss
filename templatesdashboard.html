@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel de Ingressos</title>
+</head>
+<body>
+  <h1>Ingressos Vendidos</h1>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Evento</th>
+      <th>Número</th>
+      <th>Email</th>
+      <th>Status</th>
+    </tr>
+    {% for ing in ingressos %}
+    <tr>
+      <td>{{ ing[0] }}</td>
+      <td>{{ ing[1] }}</td>
+      <td>{{ ing[2] }}</td>
+      <td>{{ ing[3] }}</td>
+      <td>{{ ing[4] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

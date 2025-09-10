@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingressos Lual</title>
+</head>
+<body>
+  <h1>Compre seu ingresso para o Lual na Praia 🌊</h1>
+  <p>Preço: R$ 100,00</p>
+  <button onclick="comprar()">Comprar ingresso</button>
+
+  <script>
+    async function comprar() {
+      const email = prompt("Digite seu e-mail:");
+      const res = await fetch("/api/pagar", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ email })
+      });
+      const data = await res.json();
+      window.location.href = data.init_point; // redireciona pro Mercado Pago
+    }
+  </script>
+</body>
+</html>
